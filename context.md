@@ -6,6 +6,6 @@ Este arquivo serve como um registro vivo das implementa√ß√µes e decis√µes arquit
 - **Data:** 2026-05-04
 - **Resumo:** Reposit√≥rio Git inicializado. Estrutura base (`src`, `tests`, `config`, `infra`) criada. Adicionados `requirements.txt` e `requirements-dev.txt` com depend√™ncias atualizadas. Ambiente Docker configurado (`docker-compose.yml` e `Dockerfile.dev`) com servi√ßos para MySQL, WordPress e Python em rede isolada. Scripts de teste (`run_tests.ps1` e `pytest.ini`) configurados e versionamento via Git iniciado com commits granulares.
 
-## Fase 2: ConfiguraÁıes e Segredos
+## Fase 2: Configura√ß√µes e Segredos
 - **Data:** 2026-05-04
-- **Resumo:** Implementado o mÛdulo config/settings.py para carregar vari·veis de ambiente. Implementado config/secrets_manager.py integrando com o SecretManagerServiceClient do GCP em ambiente de produÁ„o, e com fallback para vari·veis locais em ambiente de desenvolvimento. TDD seguido com suÌte de testes passando com mocks completos do cliente do Google Cloud.
+- **Resumo:** Implementado o m√≥dulo `config/settings.py` para carregar vari√°veis de ambiente. Implementado `config/secrets_manager.py` integrando com o SecretManagerServiceClient do GCP em ambiente de produ√ß√£o, e com fallback para vari√°veis locais em ambiente de desenvolvimento. TDD seguido com su√≠te de testes passando com mocks completos do cliente do Google Cloud.
