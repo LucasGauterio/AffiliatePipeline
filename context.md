@@ -5,3 +5,7 @@ Este arquivo serve como um registro vivo das implementaÃ§Ãµes e decisÃµes arquit
 ## Fase 1: Setup do Ambiente e Git
 - **Data:** 2026-05-04
 - **Resumo:** RepositÃ³rio Git inicializado. Estrutura base (`src`, `tests`, `config`, `infra`) criada. Adicionados `requirements.txt` e `requirements-dev.txt` com dependÃªncias atualizadas. Ambiente Docker configurado (`docker-compose.yml` e `Dockerfile.dev`) com serviÃ§os para MySQL, WordPress e Python em rede isolada. Scripts de teste (`run_tests.ps1` e `pytest.ini`) configurados e versionamento via Git iniciado com commits granulares.
+
+## Fase 2: Configurações e Segredos
+- **Data:** 2026-05-04
+- **Resumo:** Implementado o módulo config/settings.py para carregar variáveis de ambiente. Implementado config/secrets_manager.py integrando com o SecretManagerServiceClient do GCP em ambiente de produção, e com fallback para variáveis locais em ambiente de desenvolvimento. TDD seguido com suíte de testes passando com mocks completos do cliente do Google Cloud.
