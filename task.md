@@ -38,8 +38,8 @@
 - `[x]` 6.2. Atualizar `context.md` com o resumo da Fase 6 (Commit).
 
 ## Fase 7: Orquestração (Main)
-- `[ ]` 7.1. TDD + Code: Implementar `main.py` costurando todos os módulos (Commit).
-- `[ ]` 7.2. Atualizar `context.md` com o resumo da Fase 7 (Commit).
+- `[x]` 7.1. TDD + Code: Implementar `main.py` costurando todos os módulos (Commit).
+- `[x]` 7.2. Atualizar `context.md` com o resumo da Fase 7 (Commit).
 
 ## Fase 8: Deploy IaC (Terraform) e Docs Finais
 - `[ ]` 8.1. Criar `Dockerfile.prod` (Commit).

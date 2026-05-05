@@ -25,3 +25,7 @@ Este arquivo serve como um registro vivo das implementações e decisões arquit
 ## Fase 6: Módulo de Publicação (WordPress)
 - **Data:** 2026-05-05
 - **Resumo:** Implementada a classe `WordPressPublisher` no módulo `src/publisher.py` usando `requests` para se comunicar via Basic Auth com a REST API do WordPress. O módulo inclui mapeamento dos 3 produtos para os campos do plugin ACF e utiliza a biblioteca `bleach` para sanitizar rigorosamente o HTML recebido do Gemini (mitigando ataques XSS). Testes guiados por TDD usando mock do `requests.post`.
+
+## Fase 7: Orquestração (Main)
+- **Data:** 2026-05-05
+- **Resumo:** Implementado o script principal `src/main.py` que age como ponto de entrada do Cloud Run Job. Ele orquestra sequencialmente: busca da pauta pendente (`discovery.py`), coleta dos dados no scraper (`mercadolivre.py`), envio ao LLM (`ai_generator.py`) e publicação no CMS (`publisher.py`), finalizando com a marcação de conclusão no histórico. A orquestração inteira foi testada (TDD) via mocks para garantir que não haja chamadas reais de rede durante a execução dos testes.
