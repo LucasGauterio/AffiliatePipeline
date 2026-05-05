@@ -42,7 +42,7 @@
 - `[x]` 7.2. Atualizar `context.md` com o resumo da Fase 7 (Commit).
 
 ## Fase 8: Deploy IaC (Terraform) e Docs Finais
-- `[ ]` 8.1. Criar `Dockerfile.prod` (Commit).
-- `[ ]` 8.2. Codificar a infraestrutura IaC em `infra/main.tf` (Commit).
-- `[ ]` 8.3. Escrever o `README.md` final com o tutorial do Terraform (Commit).
-- `[ ]` 8.4. Fazer o commit final de conclusão de projeto.
+- `[x]` 8.1. Criar `Dockerfile.prod` (Commit).
+- `[x]` 8.2. Codificar a infraestrutura IaC em `infra/main.tf` (Commit).
+- `[x]` 8.3. Escrever o `README.md` final com o tutorial do Terraform (Commit).
+- `[x]` 8.4. Fazer o commit final de conclusão de projeto.

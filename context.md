@@ -29,3 +29,7 @@ Este arquivo serve como um registro vivo das implementações e decisões arquit
 ## Fase 7: Orquestração (Main)
 - **Data:** 2026-05-05
 - **Resumo:** Implementado o script principal `src/main.py` que age como ponto de entrada do Cloud Run Job. Ele orquestra sequencialmente: busca da pauta pendente (`discovery.py`), coleta dos dados no scraper (`mercadolivre.py`), envio ao LLM (`ai_generator.py`) e publicação no CMS (`publisher.py`), finalizando com a marcação de conclusão no histórico. A orquestração inteira foi testada (TDD) via mocks para garantir que não haja chamadas reais de rede durante a execução dos testes.
+
+## Fase 8: Deploy IaC (Terraform) e Docs Finais
+- **Data:** 2026-05-05
+- **Resumo:** Finalizada a conteinerização criando o `Dockerfile.prod` otimizado para a imagem de produção (Cloud Run Job). Criados os manifestos do Terraform (`main.tf`, `variables.tf`, `outputs.tf`) estabelecendo toda a infraestrutura baseada no Google Cloud Platform: Artifact Registry para a imagem Docker, Secret Manager para variáveis seguras, Cloud Run Job e Cloud Scheduler para execução diária. O `README.md` foi finalizado com as instruções completas para rodar TDD local e realizar o deploy em nuvem através de IaC. O projeto está concluído.
