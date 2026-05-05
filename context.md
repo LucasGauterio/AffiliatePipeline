@@ -21,3 +21,7 @@ Este arquivo serve como um registro vivo das implementações e decisões arquit
 ## Fase 5: Módulo de IA (Gemini)
 - **Data:** 2026-05-05
 - **Resumo:** Implementado o módulo `src/ai_generator.py` contendo a classe `AIGenerator` que orquestra a chamada para a API do Google Gemini (usando o SDK `google-generativeai`). O sistema recebe a pauta e a lista de produtos, formatando-os em um prompt estruturado para gerar o título e o conteúdo HTML da postagem. Implementada a validação da resposta em JSON e os testes TDD através de mocks da API do Gemini.
+
+## Fase 6: Módulo de Publicação (WordPress)
+- **Data:** 2026-05-05
+- **Resumo:** Implementada a classe `WordPressPublisher` no módulo `src/publisher.py` usando `requests` para se comunicar via Basic Auth com a REST API do WordPress. O módulo inclui mapeamento dos 3 produtos para os campos do plugin ACF e utiliza a biblioteca `bleach` para sanitizar rigorosamente o HTML recebido do Gemini (mitigando ataques XSS). Testes guiados por TDD usando mock do `requests.post`.

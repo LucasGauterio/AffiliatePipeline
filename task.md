@@ -34,8 +34,8 @@
 - `[x]` 5.2. Atualizar `context.md` com o resumo da Fase 5 (Commit).
 
 ## Fase 6: Módulo de Publicação (WordPress)
-- `[ ]` 6.1. TDD + Code: Implementar `create_payload()` e `publisher.py` (Commit).
-- `[ ]` 6.2. Atualizar `context.md` com o resumo da Fase 6 (Commit).
+- `[x]` 6.1. TDD + Code: Implementar `create_payload()` e `publisher.py` (Commit).
+- `[x]` 6.2. Atualizar `context.md` com o resumo da Fase 6 (Commit).
 
 ## Fase 7: Orquestração (Main)
 - `[ ]` 7.1. TDD + Code: Implementar `main.py` costurando todos os módulos (Commit).
