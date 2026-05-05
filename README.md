@@ -47,6 +47,6 @@ O provisionamento da arquitetura serverless no Google Cloud é gerido por **Infr
 2. **Deploy do Código Fonte:**
    Após a infraestrutura criada, construa a imagem de produção e faça o push:
    ```bash
-   docker build -t gcr.io/SEU_PROJETO/affiliate-pipeline -f Dockerfile.prod .
-   docker push gcr.io/SEU_PROJETO/affiliate-pipeline
+   docker build -t us-central1-docker.pkg.dev/SEU_PROJETO/affiliate-pipeline-repo/python-app:latest -f Dockerfile.prod .
+   docker push us-central1-docker.pkg.dev/SEU_PROJETO/affiliate-pipeline-repo/python-app:latest
    ```
