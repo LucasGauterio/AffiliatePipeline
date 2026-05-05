@@ -30,8 +30,8 @@
 - `[x]` 4.4. Atualizar `context.md` com o resumo da Fase 4 (Commit).
 
 ## Fase 5: Módulo de IA (Gemini)
-- `[ ]` 5.1. TDD + Code: Implementar a orquestração do prompt em `ai_generator.py` (Commit).
-- `[ ]` 5.2. Atualizar `context.md` com o resumo da Fase 5 (Commit).
+- `[x]` 5.1. TDD + Code: Implementar a orquestração do prompt em `ai_generator.py` (Commit).
+- `[x]` 5.2. Atualizar `context.md` com o resumo da Fase 5 (Commit).
 
 ## Fase 6: Módulo de Publicação (WordPress)
 - `[ ]` 6.1. TDD + Code: Implementar `create_payload()` e `publisher.py` (Commit).

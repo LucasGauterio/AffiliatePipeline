@@ -17,3 +17,7 @@ Este arquivo serve como um registro vivo das implementações e decisões arquit
 ## Fase 4: Scrapers e Mocks
 - **Data:** 2026-05-05
 - **Resumo:** Implementada a classe abstrata `BaseScraper` para guiar o formato da raspagem. Implementados os scrapers em modo mock (`MercadoLivreScraper` e `AmazonScraper`) retornando 3 produtos (barato, médio, premium) de acordo com as diretrizes do projeto. Todo o desenvolvimento foi coberto por testes unitários guiados por TDD.
+
+## Fase 5: Módulo de IA (Gemini)
+- **Data:** 2026-05-05
+- **Resumo:** Implementado o módulo `src/ai_generator.py` contendo a classe `AIGenerator` que orquestra a chamada para a API do Google Gemini (usando o SDK `google-generativeai`). O sistema recebe a pauta e a lista de produtos, formatando-os em um prompt estruturado para gerar o título e o conteúdo HTML da postagem. Implementada a validação da resposta em JSON e os testes TDD através de mocks da API do Gemini.
