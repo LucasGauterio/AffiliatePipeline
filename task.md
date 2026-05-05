@@ -20,14 +20,14 @@
 - `[x]` 2.3. Atualizar `context.md` com o resumo da Fase 2 (Commit).
 
 ## Fase 3: Módulo de Pauta (Discovery)
-- `[ ]` 3.1. TDD + Code: Implementar arquivo de mocks e lógica do `discovery.py` (Commit).
-- `[ ]` 3.2. Atualizar `context.md` com o resumo da Fase 3 (Commit).
+- `[x]` 3.1. TDD + Code: Implementar arquivo de mocks e lógica do `discovery.py` (Commit).
+- `[x]` 3.2. Atualizar `context.md` com o resumo da Fase 3 (Commit).
 
 ## Fase 4: Scrapers e Mocks
-- `[ ]` 4.1. TDD + Code: Implementar `base.py` e interface abstrata (Commit).
-- `[ ]` 4.2. TDD + Code: Implementar `src/scrapers/mercadolivre.py` modo mock (Commit).
-- `[ ]` 4.3. TDD + Code: Implementar `src/scrapers/amazon.py` modo mock (Commit).
-- `[ ]` 4.4. Atualizar `context.md` com o resumo da Fase 4 (Commit).
+- `[x]` 4.1. TDD + Code: Implementar `base.py` e interface abstrata (Commit).
+- `[x]` 4.2. TDD + Code: Implementar `src/scrapers/mercadolivre.py` modo mock (Commit).
+- `[x]` 4.3. TDD + Code: Implementar `src/scrapers/amazon.py` modo mock (Commit).
+- `[x]` 4.4. Atualizar `context.md` com o resumo da Fase 4 (Commit).
 
 ## Fase 5: Módulo de IA (Gemini)
 - `[ ]` 5.1. TDD + Code: Implementar a orquestração do prompt em `ai_generator.py` (Commit).

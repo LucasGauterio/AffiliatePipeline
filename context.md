@@ -13,3 +13,7 @@ Este arquivo serve como um registro vivo das implementações e decisões arquit
 ## Fase 3: Módulo de Pauta (Discovery)
 - **Data:** 2026-05-04
 - **Resumo:** Implementado o arquivo de dados local `data/topics.json` com os nichos de teste. Construído o módulo `src/discovery.py` guiado por TDD para ler os tópicos e verificar contra o `history.json` para evitar repetições, e um método para registrar conclusão.
+
+## Fase 4: Scrapers e Mocks
+- **Data:** 2026-05-05
+- **Resumo:** Implementada a classe abstrata `BaseScraper` para guiar o formato da raspagem. Implementados os scrapers em modo mock (`MercadoLivreScraper` e `AmazonScraper`) retornando 3 produtos (barato, médio, premium) de acordo com as diretrizes do projeto. Todo o desenvolvimento foi coberto por testes unitários guiados por TDD.
