@@ -17,7 +17,12 @@ class MercadoLivreScraper(BaseScraper):
         url = f"https://api.mercadolibre.com/sites/MLB/search?q={encoded_keyword}"
         
         try:
-            res = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                "Accept": "application/json",
+                "Accept-Language": "pt-BR,pt;q=0.9"
+            }
+            res = requests.get(url, headers=headers, timeout=10)
             if not res.ok:
                 print(f"⚠️ [Mercado Livre] Falha ao conectar: HTTP {res.status_code}")
                 return []
