@@ -45,33 +45,46 @@ def main():
     # Combine results and verify
     all_products = ml_products + am_products
     if not all_products:
-        print("❌ Falha crítica: Nenhum produto pôde ser coletado das lojas parceiras.")
-        return
-        
-    # 3. Smart Curation & Merging across platforms
-    if len(all_products) >= 3:
-        # Sort combined results by price ascending
-        all_products.sort(key=lambda x: float(x["price"]))
-        
-        # Select the best 3 representing the segments
-        cheap = all_products[0]
-        cheap["badge"] = "Mais Barato"
-        
-        mid_idx = len(all_products) // 2
-        value = all_products[mid_idx]
-        value["badge"] = "Custo-Benefício"
-        
-        # Get the highest-priced item from the list
-        premium = all_products[-1]
-        premium["badge"] = "Premium"
-        
-        products = [cheap, value, premium]
+        print("⚠️ [Pipeline] Scrapers bloqueados temporariamente (CAPTCHA/403). Ativando Curação por IA...")
+        try:
+            ai_gen = AIGenerator(gemini_key)
+            products = ai_gen.generate_fallback_products(topic)
+        except Exception as e:
+            print(f"❌ Falha crítica ao gerar produtos de fallback por IA: {e}")
+            return
     else:
-        # If fewer than 3 items overall, use whatever we gathered
-        products = all_products
-        for i, badge in enumerate(["Mais Barato", "Custo-Benefício", "Premium"]):
-            if i < len(products):
-                products[i]["badge"] = badge
+        # 3. Smart Curation & Merging across platforms
+        if len(all_products) >= 3:
+            # Sort combined results by price ascending
+            all_products.sort(key=lambda x: float(x["price"]))
+            
+            # Select the best 3 representing the segments
+            cheap = all_products[0]
+            cheap["badge"] = "Mais Barato"
+            
+            mid_idx = len(all_products) // 2
+            value = all_products[mid_idx]
+            value["badge"] = "Custo-Benefício"
+            
+            # Get the highest-priced item from the list
+            premium = all_products[-1]
+            premium["badge"] = "Premium"
+            
+            products = [cheap, value, premium]
+        else:
+            # If fewer than 3 items overall, use whatever we gathered
+            products = all_products
+            for i, badge in enumerate(["Mais Barato", "Custo-Benefício", "Premium"]):
+                if i < len(products):
+                    products[i]["badge"] = badge
+
+    # Ensure affiliate tag is correctly injected for all Amazon products (scraped & fallback)
+    for p in products:
+        if p.get("store") == "Amazon":
+            link = p.get("link", "")
+            if link:
+                base_link = link.split("?")[0]
+                p["link"] = f"{base_link}?tag=ehbom-20"
 
     print("📦 Produtos curados e selecionados para a vitrine:")
     for p in products:

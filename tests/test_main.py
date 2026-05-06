@@ -69,9 +69,13 @@ def test_main_success(
     mock_am_inst.scrape.assert_called_once_with("Fone de Ouvido")
     
     # Verify curated product combination
+    expected_am_product = dict(mock_product_am)
+    expected_am_product["link"] = "http://am?tag=ehbom-20"
+    expected_am_product["badge"] = "Custo-Benefício"
+
     curated_products = [
         dict(mock_product_ml, badge="Mais Barato"),
-        dict(mock_product_am, badge="Custo-Benefício")
+        expected_am_product
     ]
     
     mock_ai_inst.generate_post.assert_called_once_with("Fone de Ouvido", curated_products)
