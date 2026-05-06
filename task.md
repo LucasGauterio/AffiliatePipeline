@@ -13,13 +13,13 @@ Este arquivo substitui a versão WordPress e serve como nosso checklist unificad
 ## Fase 1: Limpeza do Ambiente e Reorganização
 - `[x]` 1.1. Modificar o `docker-compose.yml` para remover os serviços `db`, `wordpress` e `wordpress-setup`.
 - `[x]` 1.2. Remover arquivos legados do WordPress (`wp-content` e `infra/wp-setup.sh`) para manter a árvore limpa.
-- `[/]` 1.3. Realizar o commit de limpeza inicial do ambiente.
+- `[x]` 1.3. Realizar o commit de limpeza inicial do ambiente.
 
 ## Fase 2: Redesenho da Publicação para JSON Estático (TDD)
-- `[ ]` 2.1. Implementar testes unitários em `tests/test_publisher.py` cobrindo a gravação de JSON, geração de slugs e atualização de posts (TDD).
-- `[ ]` 2.2. Reescrever `src/publisher.py` como `StaticPublisher`, gravando os comparativos em `storefront/public/data/posts.json` com higienização via `bleach`.
-- `[ ]` 2.3. Atualizar `src/main.py` e certificar que a suíte `pytest` de testes unitários passe com 100% de sucesso.
-- `[ ]` 2.4. Realizar o commit das alterações do publicador estático.
+- `[x]` 2.1. Implementar testes unitários em `tests/test_publisher.py` cobrindo a gravação de JSON, geração de slugs e atualização de posts (TDD).
+- `[x]` 2.2. Reescrever `src/publisher.py` como `StaticPublisher`, gravando os comparativos em `storefront/public/data/posts.json` com higienização via `bleach`.
+- `[x]` 2.3. Atualizar `src/main.py` e certificar que a suíte `pytest` de testes unitários passe com 100% de sucesso.
+- `[/]` 2.4. Realizar o commit das alterações do publicador estático.
 
 ## Fase 3: Inicialização da Vitrine Vue.js 3 + Vite
 - `[ ]` 3.1. Inicializar o projeto Vue 3 + Vite na pasta `storefront`: `npm create vite@latest storefront -- --template vue`.

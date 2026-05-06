@@ -7,9 +7,9 @@ from src.main import main
 @patch("src.main.mark_topic_as_done")
 @patch("src.main.MercadoLivreScraper")
 @patch("src.main.AIGenerator")
-@patch("src.main.WordPressPublisher")
+@patch("src.main.StaticPublisher")
 def test_main_success(
-    mock_wp_pub, 
+    mock_static_pub, 
     mock_ai_gen, 
     mock_scraper, 
     mock_mark_done, 
@@ -27,9 +27,9 @@ def test_main_success(
     mock_ai_inst.generate_post.return_value = {"title": "Post Title", "content": "Post Content"}
     mock_ai_gen.return_value = mock_ai_inst
     
-    mock_wp_inst = MagicMock()
-    mock_wp_inst.publish.return_value = {"id": 1}
-    mock_wp_pub.return_value = mock_wp_inst
+    mock_static_inst = MagicMock()
+    mock_static_inst.publish.return_value = {"slug": "post-title"}
+    mock_static_pub.return_value = mock_static_inst
     
     def fake_get_secret(key):
         return f"fake_{key}"
@@ -42,7 +42,7 @@ def test_main_success(
     mock_get_topic.assert_called_once()
     mock_scraper_inst.scrape.assert_called_once_with("Fone de Ouvido")
     mock_ai_inst.generate_post.assert_called_once_with("Fone de Ouvido", [{"title": "Mock Product"}])
-    mock_wp_inst.publish.assert_called_once_with({"title": "Post Title", "content": "Post Content"}, [{"title": "Mock Product"}])
+    mock_static_inst.publish.assert_called_once_with({"title": "Post Title", "content": "Post Content"}, [{"title": "Mock Product"}])
     mock_mark_done.assert_called_once_with("Fone de Ouvido")
 
 @patch("src.main.get_next_topic")
