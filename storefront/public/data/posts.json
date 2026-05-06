@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "melhores-fones-de-ouvido-bluetooth-de-2026",
+    "title": "Melhores Fones de Ouvido Bluetooth de 2026",
+    "content": "<h2>Introdução</h2><p>Se você está procurando um novo fone de ouvido Bluetooth em 2026, o mercado está repleto de excelentes opções para todos os bolsos. Nesta análise comparativa detalhada, avaliamos três categorias fundamentais para te ajudar a escolher o modelo ideal: a opção mais barata para quem quer economizar, a melhor relação custo-benefício, e o topo de linha premium para os audiófilos mais exigentes.</p><h2>Análise Detalhada</h2><p>O <strong>Fone Kaidi KD-771</strong> é a escolha ideal para o dia a dia de quem busca economia sem abrir mão da praticidade, entregando uma conexão estável e áudio limpo para chamadas e podcasts.</p><p>Para quem busca o equilíbrio perfeito, o <strong>Soundcore Anker Q30</strong> oferece cancelamento de ruído ativo (ANC) espetacular, bateria de longa duração e assinatura sonora encorpada que bate de frente com modelos muito mais caros.</p><p>Por fim, se dinheiro não for problema, o <strong>Sony WH-1000XM5</strong> reina absoluto com o melhor cancelamento de ruído do mundo, áudio de alta resolução e conforto inigualável para longas sessões de uso.</p>",
+    "date": "2026-05-06 12:00:00",
+    "products": [
+      {
+        "title": "Fone Kaidi KD-771",
+        "price": "59.90",
+        "link": "https://mercadolivre.com.br",
+        "image_url": "https://http2.mlstatic.com/D_NQ_NP_831411-MLA45695078513_042021-O.webp",
+        "store": "Mercado Livre",
+        "badge": "Mais Barato"
+      },
+      {
+        "title": "Soundcore Anker Q30",
+        "price": "349.90",
+        "link": "https://mercadolivre.com.br",
+        "image_url": "https://http2.mlstatic.com/D_NQ_NP_900357-MLA47180424578_082021-O.webp",
+        "store": "Mercado Livre",
+        "badge": "Custo-Benefício"
+      },
+      {
+        "title": "Sony WH-1000XM5",
+        "price": "1999.00",
+        "link": "https://mercadolivre.com.br",
+        "image_url": "https://http2.mlstatic.com/D_NQ_NP_668749-MLA51441852467_092022-O.webp",
+        "store": "Mercado Livre",
+        "badge": "Premium"
+      }
+    ]
+  }
+]

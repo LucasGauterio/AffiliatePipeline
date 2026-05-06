@@ -19,25 +19,25 @@ Este arquivo substitui a versão WordPress e serve como nosso checklist unificad
 - `[x]` 2.1. Implementar testes unitários em `tests/test_publisher.py` cobrindo a gravação de JSON, geração de slugs e atualização de posts (TDD).
 - `[x]` 2.2. Reescrever `src/publisher.py` como `StaticPublisher`, gravando os comparativos em `storefront/public/data/posts.json` com higienização via `bleach`.
 - `[x]` 2.3. Atualizar `src/main.py` e certificar que a suíte `pytest` de testes unitários passe com 100% de sucesso.
-- `[/]` 2.4. Realizar o commit das alterações do publicador estático.
+- `[x]` 2.4. Realizar o commit das alterações do publicador estático.
 
 ## Fase 3: Inicialização da Vitrine Vue.js 3 + Vite
-- `[ ]` 3.1. Inicializar o projeto Vue 3 + Vite na pasta `storefront`: `npm create vite@latest storefront -- --template vue`.
-- `[ ]` 3.2. Instalar dependências essenciais: `vue-router` e `lucide-vue-next`.
-- `[ ]` 3.3. Estruturar diretórios internos (`components/`, `views/`, `router/`, `data/`) e configurar o roteamento (`/` para Home, `/posts/:slug` para Detalhes).
-- `[ ]` 3.4. Realizar o commit do scaffolding da vitrine.
+- `[x]` 3.1. Inicializar o projeto Vue 3 + Vite na pasta `storefront`: `npm create vite@latest storefront -- --template vue`.
+- `[x]` 3.2. Instalar dependências essenciais: `vue-router` e `lucide-vue-next`.
+- `[x]` 3.3. Estruturar diretórios internos (`components/`, `views/`, `router/`, `data/`) e configurar o roteamento (`/` para Home, `/posts/:slug` para Detalhes).
+- `[/]` 3.4. Realizar o commit do scaffolding da vitrine.
 
 ## Fase 4: Desenvolvimento da Página Inicial (Vitrine Curada)
-- `[ ]` 4.1. Criar o design system em Vanilla CSS em `storefront/src/style.css` (tema escuro com glassmorphism, tipografia Outfit, efeitos hover e badges de destaque).
-- `[ ]` 4.2. Desenvolver os componentes globais de layout: `StorefrontHeader.vue` e `StorefrontFooter.vue`.
-- `[ ]` 4.3. Implementar `HomeView.vue` apresentando o grid de comparativos lado a lado com fotos, preços, lojas de origem, barra de pesquisa e filtros interativos.
-- `[ ]` 4.4. Realizar o commit da página inicial da vitrine.
+- `[x]` 4.1. Criar o design system em Vanilla CSS em `storefront/src/style.css` (tema escuro com glassmorphism, tipografia Outfit, efeitos hover e badges de destaque).
+- `[x]` 4.2. Desenvolver os componentes globais de layout: `StorefrontHeader.vue` e `StorefrontFooter.vue`.
+- `[x]` 4.3. Implementar `HomeView.vue` apresentando o grid de comparativos lado a lado com fotos, preços, lojas de origem, barra de pesquisa e filtros interativos.
+- `[/]` 4.4. Realizar o commit da página inicial da vitrine.
 
 ## Fase 5: Detalhes do Comparativo & Compartilhamento Social
-- `[ ]` 5.1. Desenvolver `ComparisonDetailView.vue` renderizando o grid de comparação detalhado (Mais Barato, Custo-Benefício, Premium) e o texto de análise do Gemini.
-- `[ ]` 5.2. Construir `SocialShareWidget.vue` integrado com links sociais ativos e botão copiar link com feedback animado ("✓ Copiado!").
-- `[ ]` 5.3. Ajustar responsividade Mobile-First extrema para leitura confortável.
-- `[ ]` 5.4. Realizar o commit dos widgets e detalhamento.
+- `[x]` 5.1. Desenvolver `ComparisonDetailView.vue` renderizando o grid de comparação detalhado (Mais Barato, Custo-Benefício, Premium) e o texto de análise do Gemini.
+- `[x]` 5.2. Construir `SocialShareWidget.vue` integrado com links sociais ativos e botão copiar link com feedback animado ("✓ Copiado!").
+- `[x]` 5.3. Ajustar responsividade Mobile-First extrema para leitura confortável.
+- `[/]` 5.4. Realizar o commit dos widgets e detalhamento.
 
 ## Fase 6: Engine de Pré-Renderização Automatizada para SEO
 - `[ ]` 6.1. Desenvolver `storefront/prerender.js` (Node) para ler `posts.json` e exportar arquivos `.html` estáticos em `dist/` para cada rota.
