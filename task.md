@@ -64,7 +64,7 @@ Este arquivo substitui a versão WordPress e serve como nosso checklist unificad
 - `[/]` 9.4. Realizar o commit final de validação.
 
 ## Fase 10: Atualização das Especificações e Conclusão
-- `[ ]` 10.1. Atualizar o arquivo `g:\Documents\Utils\AffiliatePipeline\spec.md` refletindo o novo motor de exibição Vue.
-- `[ ]` 10.2. Atualizar `g:\Documents\Utils\AffiliatePipeline\context.md` consolidando a cronologia de migração.
-- `[ ]` 10.3. Reescrever o `g:\Documents\Utils\AffiliatePipeline\README.md` com instruções sobre o ambiente de desenvolvimento Vue, build estático, pré-renderização e deploy GCS via Terraform.
-- `[ ]` 10.4. Commit final de encerramento do projeto.
+- `[x]` 10.1. Atualizar o arquivo `g:\Documents\Utils\AffiliatePipeline\spec.md` refletindo o novo motor de exibição Vue.
+- `[x]` 10.2. Atualizar `g:\Documents\Utils\AffiliatePipeline\context.md` consolidando a cronologia de migração.
+- `[x]` 10.3. Reescrever o `g:\Documents\Utils\AffiliatePipeline\README.md` com instruções sobre o ambiente de desenvolvimento Vue, build estático, pré-renderização e deploy GCS via Terraform.
+- `[/]` 10.4. Commit final de encerramento do projeto.

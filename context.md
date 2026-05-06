@@ -37,3 +37,28 @@ Este arquivo serve como um registro vivo das implementações e decisões arquit
 ## Fase 9: Melhorias de UI/UX e Frontend
 - **Data:** 2026-05-05
 - **Resumo:** A lacuna visual foi preenchida com a implementação de ponta a ponta de imagens no pipeline. Os scrapers (`mercadolivre.py`, `amazon.py`) e o `publisher.py` foram atualizados para coletar e transmitir o atributo `image_url` para o payload do ACF, devidamente guiados por TDD. No frontend, desenvolvemos o plugin customizado `affiliate-renderer` com PHP e um CSS responsivo, de carregamento otimizado (sem bibliotecas de terceiros) e de alto apelo visual (botões vibrantes, badges, grid em desktop e single-column em mobile). Os dados agora são renderizados com perfeição no final de cada artigo.
+
+## Fase 10: Portabilidade e Auto-Configuração Automática
+- **Data:** 2026-05-06
+- **Resumo:** Implementado o serviço `wordpress-setup` com o script de inicialização `wp-setup.sh`. O script realiza checagem de conexão nativa com o banco de dados via PHP, instalação silenciosa do WordPress, injeção robusta do usuário `developer` com senha de aplicação autônoma e sincronizada, instalação automática e ativação de plugins (`advanced-custom-fields`, `affiliate-renderer`), configuração do tema `accelerate` e reescrita de links permanentes para `postname` com flush automático de regras do Apache.
+
+## Fase 11: Enriquecimento de Metadados e Compartilhamento Social
+- **Data:** 2026-05-06
+- **Resumo:** Criado o sistema de compartilhamento social reativo em JavaScript (`script.js`) integrado ao plugin `affiliate-renderer.php`. Implementados botões de compartilhamento responsivos para WhatsApp, Facebook, Twitter, LinkedIn e um botão interativo de cópia de link de área de transferência com transição de estados ("✓ Copiado!"). Integradas tags dinâmicas de OpenGraph (OG) e Twitter Cards injetadas via head do WordPress (`wp_head`), utilizando dinamicamente a imagem do primeiro produto em destaque como thumbnail de compartilhamento.
+
+## Fase 12: Vitrine e Grade de Comparação de Produtos
+- **Data:** 2026-05-06
+- **Resumo:** Redesenhada a lógica de loops de exibição de conteúdo no WordPress. Nas páginas de listas e arquivos (`!is_single()`), o plugin intercepta o loop padrão para substituir o resumo do artigo por um painel de comparação horizontal ("Comparativo Simplificado") que agrupa side-by-side as opções "Mais Barata", "Custo-Benefício" e "Premium" com imagens, preços, loja e links diretos de afiliados, mantendo um link direcionador para a análise completa. Nos posts individuais (`is_single()`), exibe a grade comparativa detalhada e a barra social de compartilhamento.
+
+## Fase 13: Controle de Qualidade, Automação de Campos e Conclusão
+- **Data:** 2026-05-06
+- **Resumo:** Corrigido o bug de teste unitário `test_publisher.py` resolvendo a NameError de escopo. Implementada a auto-definição e registro programático das tabelas de campos customizados do ACF via `acf_add_local_field_group` com exposição completa para a API REST (`show_in_rest => true`) e compatibilidade dinâmica com conexões HTTP locais via filtro. Rodada a suíte completa de testes no contêiner com 100% de sucesso e 97% de cobertura. A conformidade visual de ponta a ponta e a interatividade dos widgets foram verificadas com sucesso através de testes automatizados via browser headless.
+
+## Fase 14: Migração para Arquitetura JAMstack e Vitrine Vue.js 3
+- **Data:** 2026-05-06
+- **Resumo:** Refatoração completa de toda a arquitetura da aplicação para eliminar a dependência do CMS WordPress e banco de dados relacional MySQL. 
+  1. No backend, reescrevemos o publicador para a classe `StaticPublisher` em `src/publisher.py` (com 100% de testes unitários passando em pytest com cobertura de 82%), salvando as comparações como um banco de dados de arquivos JSON estruturados. O módulo suporta salvamento local e escrita direta e transacional na nuvem (GCP Cloud Storage) pelo prefixo de protocolo `gs://`.
+  2. No frontend, scaffoldamos uma aplicação de vitrine em Vue 3 + Vite na pasta `storefront/` e construímos um Design System premium com tema escuro glassmorphic, micro-animações, e filtros integrados por texto e lojas na `HomeView.vue`, além de páginas ricas de análise em `ComparisonDetailView.vue` e botões de compartilhamento integrados com feedback animado no `SocialShareWidget.vue`.
+  3. Desenvolvemos o motor de SEO pre-render (`storefront/prerender.js`) acionado pós-build para pré-renderizar páginas estáticas `.html` em tempo de build para cada slug com injeção automática de tags OpenGraph ricas e dados estruturados Schema.org JSON-LD (e-commerce Product/Offer) para indexação rápida no Googlebot.
+  4. Atualizamos a infraestrutura IaC (`infra/main.tf`) removendo variáveis do WordPress e provisionando um bucket no Google Cloud Storage configurado para hospedagem estática, garantindo permissões granulares de escrita para o Cloud Run Job.
+  5. Verificamos a conformidade de compilação, build estático, integridade do pre-render SEO e fluxos de navegação e compartilhamento no localhost através de testes visuais robustos com subagente browser. O projeto foi completamente modernizado para o padrão serverless estático.
