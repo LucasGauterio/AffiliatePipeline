@@ -12,9 +12,9 @@ resource "google_artifact_registry_repository" "pipeline_repo" {
   format        = "DOCKER"
 }
 
-# 2. Secret Manager
+# 2. Secret Manager (Only keep necessary key)
 locals {
-  secrets = ["WP_URL", "WP_USER", "WP_PASSWORD", "GEMINI_API_KEY"]
+  secrets = ["GEMINI_API_KEY"]
 }
 
 resource "google_secret_manager_secret" "secrets" {
@@ -38,7 +38,40 @@ resource "google_secret_manager_secret_iam_member" "secret_access" {
   member    = "serviceAccount:${google_service_account.pipeline_sa.email}"
 }
 
-# 4. Cloud Run Job
+# 4. GCS Bucket for Static Storefront Hosting
+resource "google_storage_bucket" "static_storefront" {
+  name          = "affiliate-pipeline-storefront-${var.project_id}"
+  location      = "US"
+  force_destroy = true
+
+  website {
+    main_page_suffix = "index.html"
+    not_found_page   = "index.html" # Essential for dynamic routing fallback in single page apps
+  }
+
+  cors {
+    origin          = ["*"]
+    method          = ["GET", "HEAD", "OPTIONS"]
+    response_header = ["*"]
+    max_age_seconds = 3600
+  }
+}
+
+# Allow GCS Bucket to be publicly readable as a website
+resource "google_storage_bucket_iam_member" "public_rule" {
+  bucket = google_storage_bucket.static_storefront.name
+  role   = "roles/storage.legacyObjectReader"
+  member = "allUsers"
+}
+
+# Authorize the Pipeline SA to read/write comparison data to GCS
+resource "google_storage_bucket_iam_member" "pipeline_storage_admin" {
+  bucket = google_storage_bucket.static_storefront.name
+  role   = "roles/storage.objectAdmin"
+  member = "serviceAccount:${google_service_account.pipeline_sa.email}"
+}
+
+# 5. Cloud Run Job
 resource "google_cloud_run_v2_job" "pipeline_job" {
   name     = "affiliate-pipeline-job"
   location = var.region
@@ -57,12 +90,16 @@ resource "google_cloud_run_v2_job" "pipeline_job" {
           name  = "GCP_PROJECT_ID"
           value = var.project_id
         }
+        env {
+          name  = "POSTS_JSON_PATH"
+          value = "gs://${google_storage_bucket.static_storefront.name}/data/posts.json"
+        }
       }
     }
   }
 }
 
-# 5. Cloud Scheduler
+# 6. Cloud Scheduler
 resource "google_cloud_scheduler_job" "pipeline_scheduler" {
   name             = "trigger-affiliate-pipeline"
   description      = "Triggers the Affiliate Pipeline Cloud Run Job"

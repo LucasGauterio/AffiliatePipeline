@@ -52,10 +52,10 @@ Este arquivo substitui a versão WordPress e serve como nosso checklist unificad
 - `[/]` 7.4. Realizar o commit das configurações Docker.
 
 ## Fase 8: Infraestrutura Cloud Serverless Estática (IaC)
-- `[ ]` 8.1. Modificar `infra/main.tf` para remover variáveis do WP e provisionar um Bucket do Google Cloud Storage (GCS) como hospedagem de site estático.
-- `[ ]` 8.2. Associar permissões de escrita/leitura do bucket para a Conta de Serviço (SA) do Cloud Run Job.
-- `[ ]` 8.3. Ajustar o Job no Terraform para sincronizar e enviar dados gerados direto para o Bucket de produção.
-- `[ ]` 8.4. Realizar o commit das atualizações IaC.
+- `[x]` 8.1. Modificar `infra/main.tf` para remover variáveis do WP e provisionar um Bucket do Google Cloud Storage (GCS) como hospedagem de site estático.
+- `[x]` 8.2. Associar permissões de escrita/leitura do bucket para a Conta de Serviço (SA) do Cloud Run Job.
+- `[x]` 8.3. Ajustar o Job no Terraform para sincronizar e enviar dados gerados direto para o Bucket de produção.
+- `[/]` 8.4. Realizar o commit das atualizações IaC.
 
 ## Fase 9: Controle de Qualidade e Validação End-to-End
 - `[ ]` 9.1. Executar suíte completa de testes `pytest` e cobertura de código.
