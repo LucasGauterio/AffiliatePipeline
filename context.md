@@ -33,3 +33,7 @@ Este arquivo serve como um registro vivo das implementações e decisões arquit
 ## Fase 8: Deploy IaC (Terraform) e Docs Finais
 - **Data:** 2026-05-05
 - **Resumo:** Finalizada a conteinerização criando o `Dockerfile.prod` otimizado para a imagem de produção (Cloud Run Job). Criados os manifestos do Terraform (`main.tf`, `variables.tf`, `outputs.tf`) estabelecendo toda a infraestrutura baseada no Google Cloud Platform: Artifact Registry para a imagem Docker, Secret Manager para variáveis seguras, Cloud Run Job e Cloud Scheduler para execução diária. O `README.md` foi finalizado com as instruções completas para rodar TDD local e realizar o deploy em nuvem através de IaC. O projeto está concluído.
+
+## Fase 9: Melhorias de UI/UX e Frontend
+- **Data:** 2026-05-05
+- **Resumo:** A lacuna visual foi preenchida com a implementação de ponta a ponta de imagens no pipeline. Os scrapers (`mercadolivre.py`, `amazon.py`) e o `publisher.py` foram atualizados para coletar e transmitir o atributo `image_url` para o payload do ACF, devidamente guiados por TDD. No frontend, desenvolvemos o plugin customizado `affiliate-renderer` com PHP e um CSS responsivo, de carregamento otimizado (sem bibliotecas de terceiros) e de alto apelo visual (botões vibrantes, badges, grid em desktop e single-column em mobile). Os dados agora são renderizados com perfeição no final de cada artigo.

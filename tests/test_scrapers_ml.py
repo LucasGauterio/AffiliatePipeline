@@ -13,6 +13,7 @@ def test_mercadolivre_scraper_mock():
         assert "title" in item
         assert "price" in item
         assert "link" in item
+        assert "image_url" in item
         assert "store" in item
         assert item["store"] == "Mercado Livre"
         

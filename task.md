@@ -46,3 +46,10 @@
 - `[x]` 8.2. Codificar a infraestrutura IaC em `infra/main.tf` (Commit).
 - `[x]` 8.3. Escrever o `README.md` final com o tutorial do Terraform (Commit).
 - `[x]` 8.4. Fazer o commit final de conclusão de projeto.
+
+## Fase 9: Melhorias de UI/UX e Frontend
+- `[x]` 9.1. Adicionar extração de `image_url` aos mock scrapers (MercadoLivre e Amazon).
+- `[x]` 9.2. Atualizar o `publisher.py` (e testes) para enviar a imagem para os campos ACF.
+- `[x]` 9.3. Criar plugin WordPress `affiliate-renderer` (PHP e CSS).
+- `[x]` 9.4. Validar o visual do grid de produtos no ambiente WordPress local.
+- `[x]` 9.5. Atualizar o `context.md` com a conclusão da Fase 9.

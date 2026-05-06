@@ -16,9 +16,9 @@ def test_publisher_create_payload_and_post(mock_post):
     )
 
     products = [
-        {"title": "Prod 1", "price": "10", "link": "http://p1", "store": "Store 1"},
-        {"title": "Prod 2", "price": "20", "link": "http://p2", "store": "Store 2"},
-        {"title": "Prod 3", "price": "30", "link": "http://p3", "store": "Store 3"}
+        {"title": "Prod 1", "price": "10", "link": "http://p1", "image_url": "http://i1", "store": "Store 1"},
+        {"title": "Prod 2", "price": "20", "link": "http://p2", "image_url": "http://i2", "store": "Store 2"},
+        {"title": "Prod 3", "price": "30", "link": "http://p3", "image_url": "http://i3", "store": "Store 3"}
     ]
 
     # Malicious script injected by AI
@@ -35,9 +35,10 @@ def test_publisher_create_payload_and_post(mock_post):
     args, kwargs = mock_post.call_args
     assert kwargs["auth"] == ("admin", "password")
     
-    payload = kwargs["json"]
     assert payload["title"] == "My Post"
     assert payload["status"] == "publish"
+    assert payload["comment_status"] == "closed"
+    assert payload["ping_status"] == "closed"
     
     # Check Bleach sanitization
     assert "<script>" not in payload["content"]
@@ -46,5 +47,6 @@ def test_publisher_create_payload_and_post(mock_post):
     # Check ACF payload
     acf = payload["acf"]
     assert acf["product_1_title"] == "Prod 1"
+    assert acf["product_1_image"] == "http://i1"
     assert acf["product_2_price"] == "20"
     assert acf["product_3_store"] == "Store 3"

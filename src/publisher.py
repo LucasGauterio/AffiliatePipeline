@@ -35,12 +35,15 @@ class WordPressPublisher:
             acf_data[f"product_{i}_title"] = product["title"]
             acf_data[f"product_{i}_price"] = product["price"]
             acf_data[f"product_{i}_link"] = product["link"]
+            acf_data[f"product_{i}_image"] = product.get("image_url", "")
             acf_data[f"product_{i}_store"] = product["store"]
 
         return {
             "title": post_data["title"],
             "content": self._sanitize_content(post_data["content"]),
             "status": "publish",
+            "comment_status": "closed",
+            "ping_status": "closed",
             "acf": acf_data
         }
 
@@ -49,7 +52,7 @@ class WordPressPublisher:
         Publishes the post to WordPress.
         """
         payload = self._create_payload(post_data, products)
-        endpoint = f"{self.wp_url}/wp-json/wp/v2/posts"
+        endpoint = f"{self.wp_url}/index.php/wp-json/wp/v2/posts"
         
         response = requests.post(
             endpoint,

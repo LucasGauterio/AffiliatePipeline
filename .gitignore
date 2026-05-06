@@ -9,3 +9,5 @@ __pycache__/
 terraform.tfstate*
 history.json
 wp-content/
+.venv/
+.venv/*
