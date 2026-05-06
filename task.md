@@ -46,10 +46,10 @@ Este arquivo substitui a versão WordPress e serve como nosso checklist unificad
 - `[/]` 6.4. Realizar o commit do pré-renderizador SEO.
 
 ## Fase 7: Ambiente Docker para Desenvolvedor (Vite Dev Server)
-- `[ ]` 7.1. Desenvolver o `storefront/Dockerfile.dev` com Node para rodar o Vite local.
-- `[ ]` 7.2. Configurar o serviço `storefront` no `docker-compose.yml` mapeando volumes para hot-reloading e expondo a porta 8080.
-- `[ ]` 7.3. Subir e testar o fluxo de desenvolvimento interativo local.
-- `[ ]` 7.4. Realizar o commit das configurações Docker.
+- `[x]` 7.1. Desenvolver o `storefront/Dockerfile.dev` com Node para rodar o Vite local.
+- `[x]` 7.2. Configurar o serviço `storefront` no `docker-compose.yml` mapeando volumes para hot-reloading e expondo a porta 8080.
+- `[x]` 7.3. Subir e testar o fluxo de desenvolvimento interativo local.
+- `[/]` 7.4. Realizar o commit das configurações Docker.
 
 ## Fase 8: Infraestrutura Cloud Serverless Estática (IaC)
 - `[ ]` 8.1. Modificar `infra/main.tf` para remover variáveis do WP e provisionar um Bucket do Google Cloud Storage (GCS) como hospedagem de site estático.
