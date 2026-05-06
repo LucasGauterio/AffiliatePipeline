@@ -4,8 +4,8 @@
   --bg-dark: #0a0a0f;
   --text-light: #f3f4f6;
   --text-muted: rgba(243, 244, 246, 0.6);
-  --accent-cyan: #00f2fe;
-  --accent-blue: #4facfe;
+  --accent-blue: #0072ff; /* Neon Blue */
+  --accent-green: #00ff87; /* Neon Green */
   --border-color: rgba(255, 255, 255, 0.06);
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -41,7 +41,7 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-cyan);
+  background: var(--accent-green);
 }
 
 /* Smooth Interactive Resets */
@@ -51,6 +51,6 @@ button, select, input {
 
 /* Focus outline */
 *:focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--accent-green);
   outline-offset: 2px;
 }

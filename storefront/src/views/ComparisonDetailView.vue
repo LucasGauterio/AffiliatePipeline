@@ -145,7 +145,7 @@ const getBadgeClass = (badge) => {
 }
 
 .btn-back:hover {
-  color: #00f2fe;
+  color: var(--accent-green);
 }
 
 /* Header */
@@ -183,7 +183,7 @@ const getBadgeClass = (badge) => {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 1.5rem;
-  border-left: 3px solid #00f2fe;
+  border-left: 3px solid var(--accent-green);
   padding-left: 0.75rem;
 }
 
@@ -214,7 +214,7 @@ const getBadgeClass = (badge) => {
 }
 
 .comparison-card:hover {
-  border-color: rgba(0, 242, 254, 0.2);
+  border-color: rgba(0, 255, 135, 0.2);
   background: rgba(18, 18, 24, 0.85);
 }
 
@@ -323,9 +323,9 @@ const getBadgeClass = (badge) => {
 }
 
 .btn-shop:hover {
-  background: #00f2fe;
+  background: var(--accent-green);
   color: #0c0c12;
-  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 255, 135, 0.25);
 }
 
 /* Deep Dive Content (HTML render) */
@@ -388,7 +388,7 @@ const getBadgeClass = (badge) => {
 
 .btn-home {
   display: inline-block;
-  background: #00f2fe;
+  background: var(--accent-green);
   color: #0c0c12;
   font-weight: 700;
   text-decoration: none;
@@ -399,7 +399,7 @@ const getBadgeClass = (badge) => {
 }
 
 .btn-home:hover {
-  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 255, 135, 0.25);
 }
 
 /* Skeleton loader */

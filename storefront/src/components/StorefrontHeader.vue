@@ -2,7 +2,7 @@
   <header class="storefront-header">
     <div class="header-container">
       <router-link to="/" class="logo">
-        <span class="logo-accent">Affiliate</span><span class="logo-main">Pipeline</span>
+        <img src="/ehbom-header.png" alt="É bom?" class="logo-image" />
       </router-link>
       <nav class="nav-links">
         <router-link to="/" class="nav-link" active-class="active">
@@ -22,7 +22,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1.5rem;
 }
 
 .header-container {
@@ -35,22 +35,18 @@
 
 .logo {
   text-decoration: none;
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
   display: flex;
   align-items: center;
 }
 
-.logo-accent {
-  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.logo-image {
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
 }
 
-.logo-main {
-  color: #ffffff;
+.logo-image:hover {
+  transform: scale(1.03);
 }
 
 .nav-links {
@@ -74,7 +70,7 @@
 }
 
 .nav-link.active {
-  color: #00f2fe;
-  background: rgba(0, 242, 254, 0.1);
+  color: #00ff87;
+  background: rgba(0, 255, 135, 0.08);
 }
 </style>

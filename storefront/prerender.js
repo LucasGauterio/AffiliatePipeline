@@ -50,21 +50,21 @@ const injectAppContent = (html, content) => {
 // --- Home Page Pre-rendering ---
 console.log('🏠 Pré-renderizando Home Page...')
 const homeMeta = `
-  <title>Vitrine de Recomendações Inteligentes | AffiliatePipeline</title>
-  <meta name="description" content="Sua vitrine de comparativos de eletrônicos e tecnologia. Análises profundas geradas por IA com os melhores links de afiliado." />
-  <meta property="og:title" content="Vitrine de Recomendações Inteligentes | AffiliatePipeline" />
-  <meta property="og:description" content="Sua vitrine de comparativos de eletrônicos e tecnologia. Análises profundas geradas por IA com os melhores links de afiliado." />
+  <title>É bom? | Vitrine Inteligente de Recomendações</title>
+  <meta name="description" content="Descubra se o produto realmente vale a pena com nossas análises independentes e comparativos das maiores lojas do país." />
+  <meta property="og:title" content="É bom? | Vitrine Inteligente de Recomendações" />
+  <meta property="og:description" content="Descubra se o produto realmente vale a pena com nossas análises independentes e comparativos das maiores lojas do país." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vitrine.pipeline.com.br/" />
+  <meta property="og:url" content="https://www.ehbom.com.br/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Vitrine de Recomendações Inteligentes | AffiliatePipeline" />
-  <meta name="twitter:description" content="Sua vitrine de comparativos de eletrônicos e tecnologia. Análises profundas geradas por IA com os melhores links de afiliado." />
+  <meta name="twitter:title" content="É bom? | Vitrine Inteligente de Recomendações" />
+  <meta name="twitter:description" content="Descubra se o produto realmente vale a pena com nossas análises independentes e comparativos das maiores lojas do país." />
 `
 
 const homeStaticContent = `
   <header style="text-align:center; padding: 2rem;">
-    <h1>Vitrine de Recomendações Inteligentes</h1>
-    <p>Comparativos detalhados de produtos para simplificar sua decisão de compra.</p>
+    <h1>É bom?</h1>
+    <p>Descubra se o produto realmente vale a pena com nossas análises independentes e comparativos inteligentes.</p>
   </header>
   <main style="max-width: 800px; margin: 0 auto; padding: 1rem;">
     <h2>Análises e Comparativos Disponíveis:</h2>
@@ -88,9 +88,9 @@ console.log('✅ Home Page pré-renderizada com sucesso em dist/index.html!')
 posts.forEach(post => {
   console.log(`📄 Pré-renderizando post: /posts/${post.slug}...`)
   
-  const siteUrl = 'https://vitrine.pipeline.com.br'
+  const siteUrl = 'https://www.ehbom.com.br'
   const postUrl = `${siteUrl}/posts/${post.slug}`
-  const pageTitle = `${post.title} | AffiliatePipeline`
+  const pageTitle = `${post.title} | É bom?`
   const pageDescription = `Análise comparativa completa: ${post.title}. Veja nossa seleção de modelos: Mais Barato, Custo-Benefício e Premium.`
   const coverImage = post.products[0]?.image_url || `${siteUrl}/favicon.svg`
 

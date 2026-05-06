@@ -2,14 +2,14 @@
   <footer class="storefront-footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <span class="brand-accent">Affiliate</span>Pipeline
+        <span class="brand-accent">É bom?</span>
       </div>
       <p class="footer-disclaimer">
         <strong>Divulgação de Afiliados:</strong> Como associado ou parceiro do Mercado Livre, ganhamos uma pequena comissão por compras qualificadas através de nossos links, sem custo adicional para você. Todas as análises são geradas de forma autônoma com apoio de inteligência artificial baseada em dados reais dos produtos.
       </p>
       <div class="footer-divider"></div>
       <p class="footer-copy">
-        &copy; 2026 AffiliatePipeline Vitrine. Desenvolvido para máxima performance e velocidade. Todos os direitos reservados.
+        &copy; 2026 É bom? - <a href="https://www.ehbom.com.br" target="_blank" style="color: inherit; text-decoration: underline;">www.ehbom.com.br</a>. Desenvolvido para máxima performance e velocidade. Todos os direitos reservados.
       </p>
     </div>
   </footer>
@@ -42,7 +42,7 @@
 }
 
 .brand-accent {
-  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  background: linear-gradient(135deg, #0072ff 0%, #00ff87 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

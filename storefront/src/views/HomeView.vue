@@ -62,8 +62,8 @@ const getBadgeClass = (badge) => {
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1 class="hero-title">Vitrine Inteligente de Recomendações</h1>
-        <p class="hero-subtitle">Análises independentes geradas por IA com curadoria das melhores ofertas das maiores lojas do país.</p>
+        <h1 class="hero-title">É bom?</h1>
+        <p class="hero-subtitle">Descubra se o produto realmente vale a pena com nossas análises independentes e comparativos das maiores lojas do país.</p>
       </div>
     </section>
 
@@ -170,7 +170,7 @@ const getBadgeClass = (badge) => {
 .hero-section {
   text-align: center;
   padding: 3rem 1rem;
-  background: radial-gradient(circle at top, rgba(0, 242, 254, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle at top, rgba(0, 114, 255, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
   border-radius: 20px;
 }
 
@@ -236,8 +236,8 @@ const getBadgeClass = (badge) => {
 
 .search-input:focus {
   background: rgba(255, 255, 255, 0.05);
-  border-color: #00f2fe;
-  box-shadow: 0 0 0 4px rgba(0, 242, 254, 0.15);
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 4px rgba(0, 255, 135, 0.15);
 }
 
 .store-filter {
@@ -267,7 +267,7 @@ const getBadgeClass = (badge) => {
 }
 
 .filter-select:focus {
-  border-color: #00f2fe;
+  border-color: var(--accent-green);
 }
 
 /* Vitrine Grid */
@@ -291,8 +291,8 @@ const getBadgeClass = (badge) => {
 
 .vitrine-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 242, 254, 0.25);
-  box-shadow: 0 12px 40px rgba(0, 242, 254, 0.05);
+  border-color: rgba(0, 255, 135, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 114, 255, 0.05);
 }
 
 .card-header {
@@ -454,9 +454,9 @@ const getBadgeClass = (badge) => {
 }
 
 .btn-buy:hover {
-  background: #00f2fe;
+  background: var(--accent-green);
   color: #0c0c12;
-  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 255, 135, 0.25);
 }
 
 /* Card Footer */
@@ -485,7 +485,7 @@ const getBadgeClass = (badge) => {
 
 .btn-detail:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: #00f2fe;
+  border-color: var(--accent-green);
 }
 
 /* Empty State */
