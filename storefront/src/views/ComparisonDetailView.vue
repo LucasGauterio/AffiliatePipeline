@@ -136,7 +136,7 @@ const getBadgeClass = (badge) => {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -148,9 +148,13 @@ const getBadgeClass = (badge) => {
   color: var(--accent-green);
 }
 
+:root:not(.dark) .btn-back:hover {
+  color: var(--accent-blue);
+}
+
 /* Header */
 .detail-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 1.5rem;
 }
 
@@ -159,14 +163,14 @@ const getBadgeClass = (badge) => {
   font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -1px;
-  color: #ffffff;
+  color: var(--text-main);
   margin: 0 0 0.75rem 0;
 }
 
 .detail-meta {
   display: flex;
   gap: 1.5rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
@@ -181,18 +185,23 @@ const getBadgeClass = (badge) => {
   font-family: 'Outfit', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-main);
   margin-bottom: 1.5rem;
   border-left: 3px solid var(--accent-green);
   padding-left: 0.75rem;
 }
 
+:root:not(.dark) .section-title {
+  border-left-color: var(--accent-blue);
+}
+
 /* Comparison Grid */
 .comparison-block {
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2rem;
+  box-shadow: 0 8px 30px var(--shadow-color);
 }
 
 .comparison-grid {
@@ -202,8 +211,8 @@ const getBadgeClass = (badge) => {
 }
 
 .comparison-card {
-  background: rgba(18, 18, 24, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.75rem;
   display: flex;
@@ -215,7 +224,11 @@ const getBadgeClass = (badge) => {
 
 .comparison-card:hover {
   border-color: rgba(0, 255, 135, 0.2);
-  background: rgba(18, 18, 24, 0.85);
+  background: var(--bg-panel);
+}
+
+:root:not(.dark) .comparison-card:hover {
+  border-color: rgba(0, 98, 255, 0.15);
 }
 
 .badge-ribbon {
@@ -237,10 +250,20 @@ const getBadgeClass = (badge) => {
   border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
+:root:not(.dark) .badge-cheap {
+  background: rgba(16, 185, 129, 0.08);
+  color: #059669;
+}
+
 .badge-value {
   background: rgba(245, 158, 11, 0.12);
   color: #f59e0b;
   border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+:root:not(.dark) .badge-value {
+  background: rgba(245, 158, 11, 0.08);
+  color: #d97706;
 }
 
 .badge-premium {
@@ -249,12 +272,18 @@ const getBadgeClass = (badge) => {
   border: 1px solid rgba(139, 92, 246, 0.2);
 }
 
+:root:not(.dark) .badge-premium {
+  background: rgba(139, 92, 246, 0.08);
+  color: #7c3aed;
+}
+
 .product-img-box {
   height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #11111a;
+  background: var(--bg-page);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1rem;
 }
@@ -274,14 +303,14 @@ const getBadgeClass = (badge) => {
 
 .product-store {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
   font-weight: 500;
 }
 
 .product-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-main);
   margin: 0;
   line-height: 1.4;
 }
@@ -290,13 +319,13 @@ const getBadgeClass = (badge) => {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
   padding-top: 1rem;
 }
 
 .price-label {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -305,12 +334,12 @@ const getBadgeClass = (badge) => {
 .price-value {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-main);
 }
 
 .btn-shop {
-  background: #ffffff;
-  color: #0c0c12;
+  background: var(--accent-blue);
+  color: #ffffff;
   text-decoration: none;
   font-weight: 700;
   border-radius: 8px;
@@ -325,19 +354,21 @@ const getBadgeClass = (badge) => {
 .btn-shop:hover {
   background: var(--accent-green);
   color: #0c0c12;
-  box-shadow: 0 4px 15px rgba(0, 255, 135, 0.25);
+  box-shadow: 0 4px 15px var(--shadow-hover);
 }
 
 /* Deep Dive Content (HTML render) */
 .analysis-block {
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2.5rem;
+  box-shadow: 0 8px 30px var(--shadow-color);
 }
 
 .html-render {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-main);
+  opacity: 0.95;
   font-size: 1.05rem;
   line-height: 1.8;
 }
@@ -352,7 +383,7 @@ const getBadgeClass = (badge) => {
   font-family: 'Outfit', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-main);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -361,14 +392,14 @@ const getBadgeClass = (badge) => {
   font-family: 'Outfit', sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-main);
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
 .html-render :deep(strong) {
-  color: #ffffff;
-  font-weight: 600;
+  color: var(--text-main);
+  font-weight: 700;
 }
 
 .html-render :deep(ul), .html-render :deep(ol) {
@@ -388,8 +419,8 @@ const getBadgeClass = (badge) => {
 
 .btn-home {
   display: inline-block;
-  background: var(--accent-green);
-  color: #0c0c12;
+  background: var(--accent-blue);
+  color: #ffffff;
   font-weight: 700;
   text-decoration: none;
   padding: 0.8rem 1.5rem;
@@ -399,7 +430,9 @@ const getBadgeClass = (badge) => {
 }
 
 .btn-home:hover {
-  box-shadow: 0 4px 15px rgba(0, 255, 135, 0.25);
+  background: var(--accent-green);
+  color: #0c0c12;
+  box-shadow: 0 4px 15px var(--shadow-hover);
 }
 
 /* Skeleton loader */
@@ -412,26 +445,28 @@ const getBadgeClass = (badge) => {
 .skeleton-title {
   height: 48px;
   width: 70%;
-  background: rgba(255,255,255,0.03);
+  background: var(--border-color);
   border-radius: 4px;
 }
 
 .skeleton-meta {
   height: 20px;
   width: 250px;
-  background: rgba(255,255,255,0.03);
+  background: var(--border-color);
   border-radius: 4px;
 }
 
 .skeleton-grid {
   height: 380px;
-  background: rgba(255,255,255,0.02);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
 }
 
 .skeleton-text {
   height: 250px;
-  background: rgba(255,255,255,0.01);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
 }
 

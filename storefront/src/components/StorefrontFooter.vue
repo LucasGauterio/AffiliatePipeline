@@ -9,7 +9,7 @@
       </p>
       <div class="footer-divider"></div>
       <p class="footer-copy">
-        &copy; 2026 É bom? - <a href="https://www.ehbom.com.br" target="_blank" style="color: inherit; text-decoration: underline;">www.ehbom.com.br</a>. Desenvolvido para máxima performance e velocidade. Todos os direitos reservados.
+        &copy; 2026 É bom? - <a href="https://www.ehbom.com.br" target="_blank" class="footer-link">www.ehbom.com.br</a>. Desenvolvido para máxima performance e velocidade. Todos os direitos reservados.
       </p>
     </div>
   </footer>
@@ -17,10 +17,10 @@
 
 <style scoped>
 .storefront-footer {
-  background: #0d0d12;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-wrapper);
+  border-top: 1px solid var(--border-color);
   padding: 3rem 1.5rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
   font-size: 0.85rem;
 }
 
@@ -38,11 +38,10 @@
   font-family: 'Outfit', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
 }
 
 .brand-accent {
-  background: linear-gradient(135deg, #0072ff 0%, #00ff87 100%);
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -50,17 +49,27 @@
 .footer-disclaimer {
   max-width: 800px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.4);
+  opacity: 0.8;
 }
 
 .footer-divider {
   width: 100%;
   max-width: 150px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border-color);
 }
 
 .footer-copy {
-  color: rgba(255, 255, 255, 0.3);
+  opacity: 0.7;
+}
+
+.footer-link {
+  color: var(--accent-blue);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent-green);
 }
 </style>

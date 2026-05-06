@@ -86,8 +86,8 @@ const getShareUrl = (platform) => {
 
 <style scoped>
 .social-share-widget {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -96,17 +96,22 @@ const getShareUrl = (platform) => {
   flex-wrap: wrap;
   gap: 1.25rem;
   margin-top: 2rem;
+  box-shadow: 0 4px 20px var(--shadow-color);
 }
 
 .share-title-container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
 }
 
 .icon-share {
-  color: #00f2fe;
+  color: var(--accent-blue);
+}
+
+:root.dark .icon-share {
+  color: var(--accent-green);
 }
 
 .share-title {
@@ -126,19 +131,20 @@ const getShareUrl = (platform) => {
   gap: 0.4rem;
   padding: 0.6rem 1rem;
   border-radius: 8px;
-  color: #ffffff;
+  color: var(--text-main);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-panel);
   outline: none;
 }
 
 .btn-share:hover {
   transform: translateY(-2px);
+  color: #ffffff;
 }
 
 .whatsapp:hover {
@@ -162,19 +168,31 @@ const getShareUrl = (platform) => {
 }
 
 .copy-link {
-  background: rgba(0, 242, 254, 0.1);
-  color: #00f2fe;
-  border: 1px solid rgba(0, 242, 254, 0.15);
+  background: rgba(0, 98, 255, 0.08);
+  color: var(--accent-blue);
+  border: 1px solid rgba(0, 98, 255, 0.12);
 }
 
 .copy-link:hover {
-  background: rgba(0, 242, 254, 0.2);
+  background: var(--accent-blue) !important;
+  color: #ffffff !important;
+}
+
+:root.dark .copy-link {
+  background: rgba(0, 255, 135, 0.08);
+  color: var(--accent-green);
+  border: 1px solid rgba(0, 255, 135, 0.15);
+}
+
+:root.dark .copy-link:hover {
+  background: var(--accent-green) !important;
+  color: #0c0c12 !important;
 }
 
 .copy-link.copied {
-  background: #10b981;
-  color: #ffffff;
-  border-color: #10b981;
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #10b981 !important;
 }
 
 .copied-check {

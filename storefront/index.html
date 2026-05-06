@@ -9,6 +9,19 @@
     <title>É bom? | Vitrine Inteligente de Recomendações</title>
     <meta name="description" content="Descubra se o produto realmente vale a pena com nossas análises independentes e comparativos inteligentes do Mercado Livre e Amazon atualizados diariamente." />
     
+    <!-- Anti-Flash Theme Pre-initializer -->
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

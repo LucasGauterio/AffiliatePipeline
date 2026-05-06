@@ -1,27 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
 :root {
-  --bg-dark: #0a0a0f;
-  --text-light: #f3f4f6;
-  --text-muted: rgba(243, 244, 246, 0.6);
-  --accent-blue: #0072ff; /* Neon Blue */
-  --accent-green: #00ff87; /* Neon Green */
-  --border-color: rgba(255, 255, 255, 0.06);
+  /* LIGHT MODE (Default) variables */
+  --bg-page: #f8fafc; /* Cool Slate Light background */
+  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-panel: rgba(255, 255, 255, 0.6);
+  --bg-input: rgba(255, 255, 255, 0.9);
+  --bg-wrapper: #ffffff;
+  --text-main: #0f172a; /* Slate 900 */
+  --text-muted: #64748b; /* Slate 500 */
+  --border-color: rgba(15, 23, 42, 0.08);
+  --shadow-color: rgba(15, 23, 42, 0.05);
+  --shadow-hover: rgba(0, 114, 255, 0.1);
+  --bg-glass-header: rgba(255, 255, 255, 0.8);
+  
+  /* Shared Accent branding colors - Slightly higher contrast for light mode */
+  --accent-blue: #0062ff;
+  --accent-green: #00c853;
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', sans-serif;
   
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  background-color: var(--bg-page);
+  color: var(--text-main);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* DARK MODE Overrides */
+:root.dark {
+  --bg-page: #0a0a0f; /* Dark space background */
+  --bg-card: rgba(18, 18, 24, 0.45);
+  --bg-panel: rgba(18, 18, 24, 0.75);
+  --bg-input: rgba(255, 255, 255, 0.03);
+  --bg-wrapper: #161622;
+  --text-main: #f3f4f6; /* Soft gray-white text */
+  --text-muted: rgba(243, 244, 246, 0.6);
+  --border-color: rgba(255, 255, 255, 0.06);
+  --shadow-color: rgba(0, 0, 0, 0.35);
+  --shadow-hover: rgba(0, 255, 135, 0.05);
+  --bg-glass-header: rgba(18, 18, 24, 0.75);
+  
+  /* Electric Accents for dark space background */
+  --accent-blue: #0072ff;
+  --accent-green: #00ff87;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-page);
   font-family: var(--font-sans);
 }
 
@@ -29,16 +58,24 @@ body {
   box-sizing: border-box;
 }
 
+/* Smooth Theme Switching Transitions on all background/colors */
+html, body, header, footer, article, section, div, input, select, button, span, h1, h2, h3, h4, p, a {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* Premium Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-page);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(100, 116, 139, 0.15);
   border-radius: 4px;
+}
+:root.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-green);

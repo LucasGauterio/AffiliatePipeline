@@ -170,7 +170,7 @@ const getBadgeClass = (badge) => {
 .hero-section {
   text-align: center;
   padding: 3rem 1rem;
-  background: radial-gradient(circle at top, rgba(0, 114, 255, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle at top, var(--shadow-hover) 0%, rgba(0, 0, 0, 0) 70%);
   border-radius: 20px;
 }
 
@@ -180,14 +180,14 @@ const getBadgeClass = (badge) => {
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  background: linear-gradient(135deg, var(--text-main) 0%, var(--text-muted) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
   font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
   max-width: 650px;
   margin: 0 auto;
   line-height: 1.6;
@@ -195,10 +195,11 @@ const getBadgeClass = (badge) => {
 
 /* Search & Filters */
 .filter-section {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   padding: 1.25rem;
   border-radius: 14px;
+  box-shadow: 0 4px 20px var(--shadow-color);
 }
 
 .filter-bar {
@@ -218,16 +219,17 @@ const getBadgeClass = (badge) => {
   left: 1.25rem;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-muted);
+  opacity: 0.6;
 }
 
 .search-input {
   width: 100%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 0.9rem 1rem 0.9rem 3rem;
-  color: #ffffff;
+  color: var(--text-main);
   font-size: 1rem;
   outline: none;
   transition: all 0.2s ease;
@@ -235,16 +237,20 @@ const getBadgeClass = (badge) => {
 }
 
 .search-input:focus {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-wrapper);
   border-color: var(--accent-green);
   box-shadow: 0 0 0 4px rgba(0, 255, 135, 0.15);
+}
+
+:root:not(.dark) .search-input:focus {
+  box-shadow: 0 0 0 4px rgba(0, 98, 255, 0.1);
 }
 
 .store-filter {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
   font-size: 0.95rem;
   min-width: 220px;
 }
@@ -254,10 +260,10 @@ const getBadgeClass = (badge) => {
 }
 
 .filter-select {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  color: #ffffff;
+  color: var(--text-main);
   padding: 0.6rem 1.25rem;
   font-size: 0.95rem;
   outline: none;
@@ -278,21 +284,21 @@ const getBadgeClass = (badge) => {
 }
 
 .vitrine-card {
-  background: rgba(18, 18, 24, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 30px var(--shadow-color);
 }
 
 .vitrine-card:hover {
   transform: translateY(-5px);
   border-color: rgba(0, 255, 135, 0.25);
-  box-shadow: 0 12px 40px rgba(0, 114, 255, 0.05);
+  box-shadow: 0 12px 40px var(--shadow-hover);
 }
 
 .card-header {
@@ -301,7 +307,7 @@ const getBadgeClass = (badge) => {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 1.25rem;
 }
 
@@ -309,13 +315,13 @@ const getBadgeClass = (badge) => {
   font-family: 'Outfit', sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-main);
   margin: 0;
   letter-spacing: -0.5px;
 }
 
 .card-date {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
@@ -327,8 +333,8 @@ const getBadgeClass = (badge) => {
 }
 
 .product-item {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -339,8 +345,8 @@ const getBadgeClass = (badge) => {
 }
 
 .product-item:hover {
-  background: rgba(255, 255, 255, 0.035);
-  border-color: rgba(255, 255, 255, 0.08);
+  background: var(--bg-panel);
+  border-color: var(--border-color);
 }
 
 .product-badge {
@@ -360,21 +366,36 @@ const getBadgeClass = (badge) => {
 }
 
 .badge-cheap {
-  background: rgba(16, 185, 129, 0.15);
+  background: rgba(16, 185, 129, 0.12);
   color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+:root:not(.dark) .badge-cheap {
+  background: rgba(16, 185, 129, 0.08);
+  color: #059669;
 }
 
 .badge-value {
-  background: rgba(245, 158, 11, 0.15);
+  background: rgba(245, 158, 11, 0.12);
   color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.25);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+:root:not(.dark) .badge-value {
+  background: rgba(245, 158, 11, 0.08);
+  color: #d97706;
 }
 
 .badge-premium {
-  background: rgba(139, 92, 246, 0.15);
+  background: rgba(139, 92, 246, 0.12);
   color: #a78bfa;
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+:root:not(.dark) .badge-premium {
+  background: rgba(139, 92, 246, 0.08);
+  color: #7c3aed;
 }
 
 .image-wrapper {
@@ -382,7 +403,8 @@ const getBadgeClass = (badge) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #161622;
+  background: var(--bg-page);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
   margin-top: 1.5rem;
@@ -409,7 +431,7 @@ const getBadgeClass = (badge) => {
 .product-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-main);
   margin: 0;
   line-height: 1.4;
   display: -webkit-box;
@@ -423,25 +445,25 @@ const getBadgeClass = (badge) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid var(--border-color);
   padding-top: 0.75rem;
 }
 
 .product-store {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
   font-weight: 500;
 }
 
 .product-price {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-main);
 }
 
 .btn-buy {
-  background: #ffffff;
-  color: #0c0c12;
+  background: var(--accent-blue);
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   padding: 0.75rem;
@@ -456,14 +478,14 @@ const getBadgeClass = (badge) => {
 .btn-buy:hover {
   background: var(--accent-green);
   color: #0c0c12;
-  box-shadow: 0 4px 15px rgba(0, 255, 135, 0.25);
+  box-shadow: 0 4px 15px var(--shadow-hover);
 }
 
 /* Card Footer */
 .card-footer {
   display: flex;
   justify-content: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
   padding-top: 1.5rem;
 }
 
@@ -471,10 +493,10 @@ const getBadgeClass = (badge) => {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  color: #ffffff;
+  color: var(--text-main);
   padding: 0.8rem 1.75rem;
   font-weight: 600;
   font-size: 0.95rem;
@@ -484,7 +506,7 @@ const getBadgeClass = (badge) => {
 }
 
 .btn-detail:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-panel);
   border-color: var(--accent-green);
 }
 
@@ -492,8 +514,8 @@ const getBadgeClass = (badge) => {
 .empty-state {
   text-align: center;
   padding: 5rem 1rem;
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px dashed rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
+  border: 1px dashed var(--border-color);
   border-radius: 16px;
 }
 
@@ -503,7 +525,7 @@ const getBadgeClass = (badge) => {
 }
 
 .empty-state p {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
 }
 
 /* Skeletons */
@@ -515,8 +537,8 @@ const getBadgeClass = (badge) => {
 
 .skeleton-card {
   height: 480px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2rem;
   display: flex;
@@ -527,7 +549,7 @@ const getBadgeClass = (badge) => {
 .skeleton-header {
   height: 32px;
   width: 50%;
-  background: rgba(255,255,255,0.04);
+  background: var(--border-color);
   border-radius: 4px;
 }
 
@@ -539,7 +561,7 @@ const getBadgeClass = (badge) => {
 }
 
 .skeleton-product {
-  background: rgba(255,255,255,0.03);
+  background: var(--bg-panel);
   border-radius: 12px;
 }
 
@@ -547,7 +569,7 @@ const getBadgeClass = (badge) => {
   height: 44px;
   width: 200px;
   align-self: center;
-  background: rgba(255,255,255,0.04);
+  background: var(--border-color);
   border-radius: 8px;
 }
 
