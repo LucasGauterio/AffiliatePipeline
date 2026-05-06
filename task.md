@@ -25,25 +25,25 @@ Este arquivo substitui a versão WordPress e serve como nosso checklist unificad
 - `[x]` 3.1. Inicializar o projeto Vue 3 + Vite na pasta `storefront`: `npm create vite@latest storefront -- --template vue`.
 - `[x]` 3.2. Instalar dependências essenciais: `vue-router` e `lucide-vue-next`.
 - `[x]` 3.3. Estruturar diretórios internos (`components/`, `views/`, `router/`, `data/`) e configurar o roteamento (`/` para Home, `/posts/:slug` para Detalhes).
-- `[/]` 3.4. Realizar o commit do scaffolding da vitrine.
+- `[x]` 3.4. Realizar o commit do scaffolding da vitrine.
 
 ## Fase 4: Desenvolvimento da Página Inicial (Vitrine Curada)
 - `[x]` 4.1. Criar o design system em Vanilla CSS em `storefront/src/style.css` (tema escuro com glassmorphism, tipografia Outfit, efeitos hover e badges de destaque).
 - `[x]` 4.2. Desenvolver os componentes globais de layout: `StorefrontHeader.vue` e `StorefrontFooter.vue`.
 - `[x]` 4.3. Implementar `HomeView.vue` apresentando o grid de comparativos lado a lado com fotos, preços, lojas de origem, barra de pesquisa e filtros interativos.
-- `[/]` 4.4. Realizar o commit da página inicial da vitrine.
+- `[x]` 4.4. Realizar o commit da página inicial da vitrine.
 
 ## Fase 5: Detalhes do Comparativo & Compartilhamento Social
 - `[x]` 5.1. Desenvolver `ComparisonDetailView.vue` renderizando o grid de comparação detalhado (Mais Barato, Custo-Benefício, Premium) e o texto de análise do Gemini.
 - `[x]` 5.2. Construir `SocialShareWidget.vue` integrado com links sociais ativos e botão copiar link com feedback animado ("✓ Copiado!").
 - `[x]` 5.3. Ajustar responsividade Mobile-First extrema para leitura confortável.
-- `[/]` 5.4. Realizar o commit dos widgets e detalhamento.
+- `[x]` 5.4. Realizar o commit dos widgets e detalhamento.
 
 ## Fase 6: Engine de Pré-Renderização Automatizada para SEO
-- `[ ]` 6.1. Desenvolver `storefront/prerender.js` (Node) para ler `posts.json` e exportar arquivos `.html` estáticos em `dist/` para cada rota.
-- `[ ]` 6.2. Injetar metadados SEO ricos em tempo de build (Title, Description, OpenGraph, Twitter Cards e Schema.org) no cabeçalho de cada página estática.
-- `[ ]` 6.3. Integrar a execução do pré-renderizador no pipeline do `package.json` pós-build (`npm run build`).
-- `[ ]` 6.4. Realizar o commit do pré-renderizador SEO.
+- `[x]` 6.1. Desenvolver `storefront/prerender.js` (Node) para ler `posts.json` e exportar arquivos `.html` estáticos em `dist/` para cada rota.
+- `[x]` 6.2. Injetar metadados SEO ricos em tempo de build (Title, Description, OpenGraph, Twitter Cards e Schema.org) no cabeçalho de cada página estática.
+- `[x]` 6.3. Integrar a execução do pré-renderizador no pipeline do `package.json` pós-build (`npm run build`).
+- `[/]` 6.4. Realizar o commit do pré-renderizador SEO.
 
 ## Fase 7: Ambiente Docker para Desenvolvedor (Vite Dev Server)
 - `[ ]` 7.1. Desenvolver o `storefront/Dockerfile.dev` com Node para rodar o Vite local.
