@@ -58,10 +58,10 @@ Este arquivo substitui a versão WordPress e serve como nosso checklist unificad
 - `[/]` 8.4. Realizar o commit das atualizações IaC.
 
 ## Fase 9: Controle de Qualidade e Validação End-to-End
-- `[ ]` 9.1. Executar suíte completa de testes `pytest` e cobertura de código.
-- `[ ]` 9.2. Executar build de produção do Vue e auditar as pastas e arquivos em `dist/` para comprovar os metadados e tags SEO estáticas.
-- `[ ]` 9.3. Validar a experiência de usuário e interações de ponta a ponta na porta do localhost.
-- `[ ]` 9.4. Realizar o commit final de validação.
+- `[x]` 9.1. Executar suíte completa de testes `pytest` e cobertura de código.
+- `[x]` 9.2. Executar build de produção do Vue e auditar as pastas e arquivos em `dist/` para comprovar os metadados e tags SEO estáticas.
+- `[x]` 9.3. Validar a experiência de usuário e interações de ponta a ponta na porta do localhost.
+- `[/]` 9.4. Realizar o commit final de validação.
 
 ## Fase 10: Atualização das Especificações e Conclusão
 - `[ ]` 10.1. Atualizar o arquivo `g:\Documents\Utils\AffiliatePipeline\spec.md` refletindo o novo motor de exibição Vue.
